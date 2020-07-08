@@ -3,26 +3,9 @@ React native wrapper for Jitsi Meet SDK
 
 ## Install
 
-`npm install react-native-jitsi-meet --save` 
+`npm install dvhai/react-native-jitsi-meet --save` 
 
-If you are using React-Native < 0.60, you should use a version < 2.0.0.  
-For versions higher than 2.0.0, you need to add the following piece of code in your ```metro.config.js``` file to avoid conflicts between react-native-jitsi-meet and react-native in metro bundler.
-
-```
-const blacklist = require('metro-config/src/defaults/blacklist');
-
-module.exports = {
-  resolver: {
-    blacklistRE: blacklist([
-      /ios\/Pods\/JitsiMeetSDK\/Frameworks\/JitsiMeet.framework\/assets\/node_modules\/react-native\/.*/,
-    ]),
-  },
-};
-```
-
-Although most of the process is automated, you still have to follow the platform install guide below ([iOS](#ios-install-for-rn--060) and [Android](#android-install)) to get this library to work.
-
-
+----- Cấu Hình --------
 ## Use (>= 2.0.0)
 
 The following component is an example of use:

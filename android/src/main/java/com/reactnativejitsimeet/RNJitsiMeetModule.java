@@ -32,7 +32,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void call(String url, ReadableMap userInfo) {
+    public void call(String url, ReadableMap userInfo, String subject) {
         UiThreadUtil.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -55,6 +55,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                     }
                     RNJitsiMeetConferenceOptions options = new RNJitsiMeetConferenceOptions.Builder()
                             .setRoom(url)
+                            .setSubject(subject)
                             .setAudioOnly(false)
                             .setUserInfo(_userInfo)
                             .build();
