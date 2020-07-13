@@ -10,7 +10,7 @@ const call = JitsiMeetModule.call;
 const audioCall = JitsiMeetModule.audioCall;
 JitsiMeetModule.call = (url, userInfo, subject) => {
   userInfo = userInfo || {};
-  call(url, userInfo, );
+  call(url, userInfo,subject );
 }
 JitsiMeetModule.audioCall = (url, userInfo) => {
   userInfo = userInfo || {};
