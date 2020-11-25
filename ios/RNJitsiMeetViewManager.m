@@ -24,7 +24,7 @@ RCT_EXPORT_METHOD(initialize)
     RCTLogInfo(@"Initialize is deprecated in v2");
 }
 
-RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo subject:(NSString *)subjectString)
+RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo subject:(NSString *)subjectString videoMuted:(BOOL)videoMuted audioMuted:(BOOL)audioMuted)
 {
     RCTLogInfo(@"Load URL %@", urlString);
     JitsiMeetUserInfo * _userInfo = [[JitsiMeetUserInfo alloc] init];
@@ -45,6 +45,8 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo s
             builder.room = urlString;
             builder.userInfo = _userInfo;
             builder.subject = subjectString;
+            builder.videoMuted = videoMuted;
+            builder.audioMuted = audioMuted;
         }];
         [jitsiMeetView join:options];
     });
