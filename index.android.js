@@ -8,9 +8,9 @@ export const JitsiMeetView = requireNativeComponent('RNJitsiMeetView');
 export const JitsiMeetModule = NativeModules.RNJitsiMeetModule
 const call = JitsiMeetModule.call;
 const audioCall = JitsiMeetModule.audioCall;
-JitsiMeetModule.call = (url, userInfo, subject, videoMuted, audioOnly) => {
+JitsiMeetModule.call = (url, userInfo, subject, videoMuted, audioOnly, nativeCall) => {
   userInfo = userInfo || {};
-  call(url, userInfo, subject, videoMuted, audioOnly);
+  call(url, userInfo, subject, videoMuted, audioOnly, nativeCall);
 }
 JitsiMeetModule.audioCall = (url, userInfo) => {
   userInfo = userInfo || {};
